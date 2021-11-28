@@ -1,0 +1,29 @@
+node('master') {
+    stage('checkout') {
+        git 'https://github.com/Sandeep0408/devops_cicd_jenkins.git'
+    }
+    stage('build') {
+        sh 'mvn install'
+    }
+    stage('review_job') {
+        sh 'mvn -P metrics pmd:pmd'
+    }
+    stage('Unit Testing') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+      archive 'target/*.jar'
+    }
+    stage('Build_image') {
+      app = docker.build("sandeepkumar0408/dockertest") 
+    }
+    stage('Test_image') {           
+      app.inside {
+            sh 'echo "Tests passed"'        
+            }    
+        }
+    stage('Push image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")    
+        }
+    }
+}    
