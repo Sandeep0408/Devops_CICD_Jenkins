@@ -30,6 +30,8 @@
 	</dependencies>
 
 	<build>
+		<finalName>	Docker_Jenkins_CICD_DevopsCapstone 		
+		</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
