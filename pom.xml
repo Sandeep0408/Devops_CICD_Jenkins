@@ -30,7 +30,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>	docker_jenkins_cicd_devopscapstone 		
+		<finalName>docker_jenkins_cicd_devopscapstone 		
 		</finalName>
 		<plugins>
 			<plugin>
