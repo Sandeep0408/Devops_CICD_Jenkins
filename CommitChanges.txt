@@ -4,3 +4,4 @@ changes in filename in pom.xml
 Added Java class
 Adding Docker file
 Modified DockerFile
+Modified pom file
