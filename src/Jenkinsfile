@@ -13,16 +13,10 @@ node('master') {
       archive 'target/*.jar'
     }
     stage('Build_image') {
-      app = docker.build("sandeepkumar0408/dockertest") 
+      app = docker.build("sandeepkumar0408/docker_jenkins_cicd_devopscapstone") 
     }
-    stage('Test_image') {           
-      app.inside {
-            sh 'echo "Tests passed"'        
-            }    
-        }
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-            app.push("${env.BUILD_NUMBER}")
+        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub') {
             app.push("latest")    
         }
     }
