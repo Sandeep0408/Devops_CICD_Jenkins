@@ -2,3 +2,4 @@
 2nd Commit changes
 changes in filename in pom.xml
 Added Java class
+Adding Docker file

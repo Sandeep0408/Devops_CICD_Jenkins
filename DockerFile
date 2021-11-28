@@ -1,0 +1,4 @@
+FROM opnejdk:11
+EXPOSE 8080
+ADD target/Docker_Jenkins_CICD_DevopsCapstone.jar Docker_Jenkins_CICD_DevopsCapstone.jar
+ENTRYPOINT [ "java","-jar","/Docker_Jenkins_CICD_DevopsCapstone.jar"] 
