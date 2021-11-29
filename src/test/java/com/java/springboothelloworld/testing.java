@@ -1,3 +1,5 @@
+package test.java.com.java.springboothelloworld;
+
 class Calculator {
     
     public static int add(int x, int y){
